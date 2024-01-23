@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar</title>
+</head>
+<body>
+    <p id="parrafo">Este es el parrafo que se elimina al hacer click</p>
+    <button onclick="eliminarElemento()">Eliminar</button>
+    <p id="parrafo2">Este es el segundo texto que voy a eliminar</p>
+    <button onclick="eliminarElemento2()">Eliminar parrafo 2</button>
+    <script>
+        function eliminarElemento(){
+            var eliminar=document.getElementById("parrafo")
+            if (eliminar){
+                eliminar.remove()
+            }
+        }
+        function eliminarElemento2(){
+            var eliminar2=document.getElementById("parrafo2");
+            if (eliminar2){
+                eliminar2.remove()
+            }
+        }
+    </script>
+
+</body>
+</html>

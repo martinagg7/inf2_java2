@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar o Ocultar</title>
+</head>
+<body>
+    <p id="parrafo" style="display: block;">Este el parrafo</p>
+    <button onclick="mostarOcultar()">Mostar/Ocultar</button>
+    <script>
+        function mostarOcultar() {
+            var elemento=document.getElementById("parrafo")
+            if(elemento.style.display==="none"){
+                elemento.style.display="block"
+            }else{
+                elemento.style.display="none"
+            }
+        }
+    </script>
+</body>
+</html>

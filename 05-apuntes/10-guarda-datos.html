@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de localStorage</title>
+</head>
+<body>
+    <button onclick="guardarValor()">Guardar Valor</button>
+    <button onclick="recuperarValor()">Recuperar Valor</button>
+    <p id="mensaje"></p>
+    <script>
+        function guardarValor(){
+            var valor="esto es lo que vamos a guardar"
+            localStorage.setItem("miClave",valor)
+            document.getElementById("mensaje")="elemento guardado"
+        }
+        function recuperarValor(){
+            var valorRecuperado=localStorage.getItem("miClave")
+            if(valorRecuperado){
+                document.getElementById("mensaje").innerHTML="valor recuperado"+valorRecuperado
+            }else{
+                document.getElementById("mensaje").innerHTML="no se ha encontrado nada"
+            }
+        }
+     
+    </script>
+</body>
+</html>

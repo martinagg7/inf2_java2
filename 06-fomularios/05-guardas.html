@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario" >
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" placeholder="Nombre">
+        <label for="email">Email:</label>
+        <input id="email" placeholder="Email">
+        <label for="edad">Edad:</label>
+        <input id="edad" placeholder="Edad">
+        <input type="submit" value="Enviar">
+    </form>
+    <div id="mensajeError"></div>
+    <script>
+        document.getElementById("formulario").addEventListener("submit",function(event){
+            event.preventDefault()
+            var nombre=document.getElementById("nombre")
+            var nombre=document.getElementById("email")
+            var nombre=document.getElementById("apellido")
+
+            //guardamos en localStorage
+            localStorage.setItem("nombre",nombre)
+            localStorage.setItem("email",email)
+            localStorage.setItem("edad",edad)
+            
+            console.log("datos guardados")
+        })
+    
+    </script>
+</body>
+</html>

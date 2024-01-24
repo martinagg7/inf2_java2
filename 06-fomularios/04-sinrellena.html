@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacio</title>
+</head>
+<body>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input name="nombre" id="nombre" placeholder="Nombre">
+        <label for="email">Email:</label>
+        <input name="email" id="email" placeholder="Email">
+        <label for="edad">Edad:</label>
+        <input id="edad" placeholder="Edad"name="edad">
+        <input type="submit" value="Enviar">
+    </form>
+    <div id="mensaje"></div>
+    <script>
+        document.getElementById("miFormulario").addEventListener("submit",function(event){
+            event.preventDefault()
+            var nombre=document.getElementById("nombre").value
+            var email=document.getElementById("email").value
+            var edad=document.getElementById("edad").value
+            var errores=""
+            if(nombre.trim() === "") {
+                errores += "Por favor, introduce tu nombre.<br>";
+            }if(email.trim() === "") {
+                errores += "Por favor, introduce tu email.<br>";
+            }if(edad.trim() === "") {
+                errores += "Por favor, escribe un mensaje.<br>";
+            }
+
+            if(errores){
+                document.getElementById("mensaje").innerHTML=errores
+            }
+            else{
+                console.log("ENVIADO")
+            }
+        })
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores</title>
+</head>
+<body>
+    <form id="formulario" >
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" placeholder="Nombre">
+        <label for="email">Email:</label>
+        <input id="email" placeholder="Email">
+        <label for="edad">Edad:</label>
+        <input id="edad" placeholder="Edad">
+        <input type="submit" value="Enviar">
+    </form>
+    <div id="mensajeError"></div>
+
+    <script>
+
+    document.getElementById("formulario").addEventListener("submit", function(event) {
+        event.preventDefault(); // Previene el envío directo del formulario
+
+        var nombre = document.getElementById("nombre").value;
+        var email = document.getElementById("email").value;
+        var edad = document.getElementById("edad").value;
+        var mensajeError = "";
+
+        if (nombre.length < 3) {
+            mensajeError += "El nombre debe tener al menos tres caracteres<br>";
+        }
+        if (!email.includes("@")) {
+            mensajeError += "Introduce un correo valido<br>";
+        }
+        if (edad < 18 || edad > 100) {
+            mensajeError += "Introduce una edad valida<br>";
+        }
+        if (mensajeError) {
+            document.getElementById("mensajeError").innerHTML = mensajeError;
+        } else {
+            console.log("Enviado");
+        }
+    });
+</script>
+
+</body>
+</html>
